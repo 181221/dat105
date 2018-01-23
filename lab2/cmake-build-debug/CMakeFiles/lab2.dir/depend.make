@@ -9,6 +9,8 @@ CMakeFiles\lab2.dir\Spiller.cpp.obj: ..\Konto.h
 CMakeFiles\lab2.dir\Spiller.cpp.obj: ..\Spiller.cpp
 CMakeFiles\lab2.dir\Spiller.cpp.obj: ..\Spiller.h
 
+CMakeFiles\lab2.dir\main.cpp.obj: C:\Users\peder\Documents\Development\c++\dat105\.\resources\std_lib_facilities.h
 CMakeFiles\lab2.dir\main.cpp.obj: ..\Konto.h
+CMakeFiles\lab2.dir\main.cpp.obj: ..\Spiller.h
 CMakeFiles\lab2.dir\main.cpp.obj: ..\main.cpp
 

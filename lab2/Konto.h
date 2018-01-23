@@ -6,6 +6,8 @@
 #define LAB2_KONTO_H
 
 
+#include <ostream>
+
 class Konto {
 public:
     enum Type {
@@ -21,6 +23,8 @@ public:
     ~Konto() = default;
 
     double getBeholdning() const;
+
+    friend std::ostream &operator<<(std::ostream &os, const Konto &konto);
 
     Type getType() const;
 

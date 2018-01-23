@@ -94,6 +94,12 @@
 		<Unit filename="C:/Users/peder/Documents/Development/c++/dat105/lab2/Spiller.h">
 			<Option target="lab2"/>
 		</Unit>
+		<Unit filename="C:/Users/peder/Documents/Development/c++/dat105/lab2/Transaksjon.cpp">
+			<Option target="lab2"/>
+		</Unit>
+		<Unit filename="C:/Users/peder/Documents/Development/c++/dat105/lab2/Transaksjon.h">
+			<Option target="lab2"/>
+		</Unit>
 		<Unit filename="C:/Users/peder/Documents/Development/c++/dat105/lab2/main.cpp">
 			<Option target="lab2"/>
 		</Unit>

@@ -2,6 +2,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lab2.dir/main.cpp.obj"
   "CMakeFiles/lab2.dir/Spiller.cpp.obj"
   "CMakeFiles/lab2.dir/Konto.cpp.obj"
+  "CMakeFiles/lab2.dir/Transaksjon.cpp.obj"
   "lab2.pdb"
   "lab2.exe"
   "lab2.exe.manifest"

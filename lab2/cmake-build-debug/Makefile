@@ -178,6 +178,33 @@ Spiller.cpp.s:
 	$(MAKE) -f CMakeFiles\lab2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\lab2.dir\Spiller.cpp.s
 .PHONY : Spiller.cpp.s
 
+Transaksjon.obj: Transaksjon.cpp.obj
+
+.PHONY : Transaksjon.obj
+
+# target to build an object file
+Transaksjon.cpp.obj:
+	$(MAKE) -f CMakeFiles\lab2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\lab2.dir\Transaksjon.cpp.obj
+.PHONY : Transaksjon.cpp.obj
+
+Transaksjon.i: Transaksjon.cpp.i
+
+.PHONY : Transaksjon.i
+
+# target to preprocess a source file
+Transaksjon.cpp.i:
+	$(MAKE) -f CMakeFiles\lab2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\lab2.dir\Transaksjon.cpp.i
+.PHONY : Transaksjon.cpp.i
+
+Transaksjon.s: Transaksjon.cpp.s
+
+.PHONY : Transaksjon.s
+
+# target to generate assembly for a file
+Transaksjon.cpp.s:
+	$(MAKE) -f CMakeFiles\lab2.dir\build.make /nologo -$(MAKEFLAGS) CMakeFiles\lab2.dir\Transaksjon.cpp.s
+.PHONY : Transaksjon.cpp.s
+
 main.obj: main.cpp.obj
 
 .PHONY : main.obj
@@ -220,6 +247,9 @@ help:
 	@echo ... Spiller.obj
 	@echo ... Spiller.i
 	@echo ... Spiller.s
+	@echo ... Transaksjon.obj
+	@echo ... Transaksjon.i
+	@echo ... Transaksjon.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

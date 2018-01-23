@@ -45,6 +45,8 @@ Konto.h
 C:/Users/peder/Documents/Development/c++/dat105/lab2/Konto.h
 
 C:/Users/peder/Documents/Development/c++/dat105/lab2/Konto.h
+ostream
+-
 
 C:/Users/peder/Documents/Development/c++/dat105/lab2/Spiller.cpp
 Spiller.h
@@ -53,6 +55,8 @@ Konto.h
 C:/Users/peder/Documents/Development/c++/dat105/lab2/Konto.h
 
 C:/Users/peder/Documents/Development/c++/dat105/lab2/Spiller.h
+ostream
+-
 Konto.h
 C:/Users/peder/Documents/Development/c++/dat105/lab2/Konto.h
 .././resources/std_lib_facilities.h
@@ -63,4 +67,8 @@ iostream
 -
 Konto.h
 C:/Users/peder/Documents/Development/c++/dat105/lab2/Konto.h
+.././resources/std_lib_facilities.h
+C:/Users/peder/Documents/Development/c++/dat105/./resources/std_lib_facilities.h
+Spiller.h
+C:/Users/peder/Documents/Development/c++/dat105/lab2/Spiller.h
 

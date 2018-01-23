@@ -2,12 +2,16 @@
 #ifndef LAB2_SPILLER_H
 #define LAB2_SPILLER_H
 
+#include <ostream>
 #include "Konto.h"
 #include ".././resources/std_lib_facilities.h"
+#include "Transaksjon.h"
 
 
 class Spiller {
 public:
+
+    Spiller(int id, string navn, Konto konto);
 
     const string &getNavn() const;
 
@@ -21,12 +25,19 @@ public:
 
     bool uttak(double n);
 
-    Spiller(int id, string navn, Konto konto);
+    int getId() const;
+
+    Spiller::Spiller(int id, string navn, Konto konto, vector<Transaksjon> &transaksjoner) : id(id), navn(navn), konto(konto) , transaksjoner(transaksjoner) {}
+
+
+    friend ostream &operator<<(ostream &os, const Spiller &spiller);
 
 private:
     int id;
     string navn;
     Konto konto;
+    vector<Transaksjon> transaksjoner;
+
 
     bool sjekkDesimal(double n);
 
