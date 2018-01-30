@@ -20,23 +20,11 @@ Konto::Type Spiller::getType() const {
 
 
 /**
- * Returnerer true hvis antall desimalerer er under 8
+ * Returnerer true hvis antall desimalerer er mindre eller lik 8
  */
-bool Spiller::sjekkDesimal(double i) {
-    int a = 0;
-    if (i < 0)
-        i *= -1;
-    else if (i == 0)
-        i = 1;
-
-    while (i > 0) {
-        i /= 10;
-        a++;
-    }
-    return a < 8;
+bool Spiller::sjekkDesimal(double n) {
+    return fmod((n*100000000),1) == 0;
 }
-
-
 
 bool Spiller::innskudd(double n) {
     if (konto.getType() == Konto::bitcoin) {
@@ -69,7 +57,16 @@ int Spiller::getId() const {
     return id;
 }
 
-Spiller::Spiller(int id, string navn, Konto konto, vector<Transaksjon> &transaksjoner) : id(id), navn(navn), konto(konto) , transaksjoner(transaksjoner) {}
+const Vector<Transaksjon> &Spiller::getTransaksjoner() const {
+    return transaksjoner;
+}
+
+Spiller::Spiller(int id, const string &navn, const Konto &konto, const Vector<Transaksjon> &transaksjoner) : id(id),
+                                                                                                             navn(navn),
+                                                                                                             konto(konto),
+                                                                                                             transaksjoner(
+                                                                                                                     transaksjoner) {}
+
 
 
 

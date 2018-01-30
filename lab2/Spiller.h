@@ -11,8 +11,6 @@
 class Spiller {
 public:
 
-    Spiller(int id, string navn, Konto konto);
-
     const string &getNavn() const;
 
     void setNavn(const string &navn);
@@ -27,21 +25,27 @@ public:
 
     int getId() const;
 
-    Spiller::Spiller(int id, string navn, Konto konto, vector<Transaksjon> &transaksjoner) : id(id), navn(navn), konto(konto) , transaksjoner(transaksjoner) {}
+    bool betal(Spiller &spiller, double belop);
 
+    const Vector<Transaksjon> &getTransaksjoner() const;
+
+    Spiller(int id, const string &navn, const Konto &konto, const Vector<Transaksjon> &transaksjoner);
 
     friend ostream &operator<<(ostream &os, const Spiller &spiller);
 
 private:
+
     int id;
+
     string navn;
+
     Konto konto;
+
     vector<Transaksjon> transaksjoner;
 
 
     bool sjekkDesimal(double n);
 
-    bool betal(Spiller &spiller, double belop);
 };
 
 
