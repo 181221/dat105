@@ -5,7 +5,7 @@
 #ifndef LAB2_TRANSAKSJON_H
 #define LAB2_TRANSAKSJON_H
 
-
+#include ".././resources/std_lib_facilities.h"
 #include <ostream>
 
 class Transaksjon {
@@ -18,7 +18,11 @@ public:
 
     double getBelop() const;
 
-    Transaksjon(int fraId, int tilId, double belop);
+    const string &getFilnavn() const;
+
+    void setFilnavn(const string &filnavn);
+
+    Transaksjon(int fraId, int tilId, double belop, string filnavn);
 
     ~Transaksjon();
 
@@ -31,6 +35,8 @@ private:
     int tilId;
 
     double belop;
+
+    string filnavn;
 
 };
 

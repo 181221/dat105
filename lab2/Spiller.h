@@ -27,11 +27,15 @@ public:
 
     bool betal(Spiller &spiller, double belop);
 
-    const Vector<Transaksjon> &getTransaksjoner() const;
+    const vector<Transaksjon> &getTransaksjoner() const;
 
-    Spiller(int id, const string &navn, const Konto &konto, const Vector<Transaksjon> &transaksjoner);
+    Spiller(int id, string navn, const Konto &konto);
 
     friend ostream &operator<<(ostream &os, const Spiller &spiller);
+
+    bool operator+(const Spiller& s) ;
+
+
 
 private:
 
@@ -42,7 +46,6 @@ private:
     Konto konto;
 
     vector<Transaksjon> transaksjoner;
-
 
     bool sjekkDesimal(double n);
 

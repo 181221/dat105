@@ -4,12 +4,12 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/peder/Documents/Development/c++/dat105/lab2/Konto.cpp" "C:/Users/peder/Documents/Development/c++/dat105/lab2/cmake-build-debug/CMakeFiles/lab2.dir/Konto.cpp.obj"
-  "C:/Users/peder/Documents/Development/c++/dat105/lab2/Spiller.cpp" "C:/Users/peder/Documents/Development/c++/dat105/lab2/cmake-build-debug/CMakeFiles/lab2.dir/Spiller.cpp.obj"
-  "C:/Users/peder/Documents/Development/c++/dat105/lab2/Transaksjon.cpp" "C:/Users/peder/Documents/Development/c++/dat105/lab2/cmake-build-debug/CMakeFiles/lab2.dir/Transaksjon.cpp.obj"
-  "C:/Users/peder/Documents/Development/c++/dat105/lab2/main.cpp" "C:/Users/peder/Documents/Development/c++/dat105/lab2/cmake-build-debug/CMakeFiles/lab2.dir/main.cpp.obj"
+  "/home/pederyo/Development/c++/dat105/lab2/Konto.cpp" "/home/pederyo/Development/c++/dat105/lab2/cmake-build-debug/CMakeFiles/lab2.dir/Konto.cpp.o"
+  "/home/pederyo/Development/c++/dat105/lab2/Spiller.cpp" "/home/pederyo/Development/c++/dat105/lab2/cmake-build-debug/CMakeFiles/lab2.dir/Spiller.cpp.o"
+  "/home/pederyo/Development/c++/dat105/lab2/Transaksjon.cpp" "/home/pederyo/Development/c++/dat105/lab2/cmake-build-debug/CMakeFiles/lab2.dir/Transaksjon.cpp.o"
+  "/home/pederyo/Development/c++/dat105/lab2/main.cpp" "/home/pederyo/Development/c++/dat105/lab2/cmake-build-debug/CMakeFiles/lab2.dir/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "MSVC")
+set(CMAKE_CXX_COMPILER_ID "GNU")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH

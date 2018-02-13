@@ -23,12 +23,12 @@ Konto::Type Spiller::getType() const {
  * Returnerer true hvis antall desimalerer er mindre eller lik 8
  */
 bool Spiller::sjekkDesimal(double n) {
-    return fmod((n*100000000),1) == 0;
+    return fmod((n * 100000000), 1) == 0;
 }
 
 bool Spiller::innskudd(double n) {
     if (konto.getType() == Konto::bitcoin) {
-        return sjekkDesimal(n) ? konto.innskudd(n) : false;
+        return sjekkDesimal(n) && konto.innskudd(n);
     }
     return konto.innskudd(n);
 }
@@ -43,7 +43,8 @@ bool Spiller::uttak(double n) {
 bool Spiller::betal(Spiller &spiller, double belop) {
     if (konto.getType() == spiller.getType()) {
         return uttak(belop) &&
-               (transaksjoner.push_back(Transaksjon(id, spiller.getId(), belop)), spiller.innskudd(belop));
+               (transaksjoner.push_back(Transaksjon(id, spiller.getId(), belop, "transaksjoner.txt")), spiller.innskudd(
+                       belop));
     }
     return false;
 }
@@ -57,15 +58,18 @@ int Spiller::getId() const {
     return id;
 }
 
-const Vector<Transaksjon> &Spiller::getTransaksjoner() const {
+const vector<Transaksjon> &Spiller::getTransaksjoner() const {
     return transaksjoner;
 }
 
-Spiller::Spiller(int id, const string &navn, const Konto &konto, const Vector<Transaksjon> &transaksjoner) : id(id),
-                                                                                                             navn(navn),
-                                                                                                             konto(konto),
-                                                                                                             transaksjoner(
-                                                                                                                     transaksjoner) {}
+Spiller::Spiller(int id, string navn, const Konto &konto) : id(id),
+                                                                   navn(navn),
+                                                                   konto(konto) {}
+
+bool Spiller::operator+(const Spiller &s) {
+    return betal(*this, this->getBeholdning());
+}
+
 
 
 
