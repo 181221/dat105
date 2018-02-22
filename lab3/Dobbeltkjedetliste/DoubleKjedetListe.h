@@ -22,9 +22,7 @@ public:
     }
 
 
-    virtual ~DoubleKjedetListe() {
-
-    }
+    virtual ~DoubleKjedetListe() = default;
 
     T *removeFirst() override {
         return first->getNext()->setPrevious(nullptr), first;
@@ -92,6 +90,16 @@ public:
             std::cout << el->getElement()<< endl;
         }
     };
+    template<class T>
+    int compare(T &a, T &b) override {
+        if (a < b) return -1;
+        if (b < a) return 1;
+        return 0;
+    }
+    template<class T>
+    void sortIterator() override {
+        sort(first, last, compare<T>);
+    }
 
 
 
