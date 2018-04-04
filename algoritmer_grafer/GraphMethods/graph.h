@@ -61,6 +61,7 @@ void Graph::insertVertex(Node* n)
 
 void Graph::insertEdge(Node *v, Node *w, int i)
 {
+    std::cout << "V: " << v->data << " W " << w->data << std::endl;
     Edge* e = new Edge(v, w, i);
     edgeList.push_back(e);
     v->edgeList.push_back(e);
@@ -69,7 +70,22 @@ void Graph::insertEdge(Node *v, Node *w, int i)
 
 void Graph::removeVertex(Node *n)
 {
-    //TODO
+    for(int i = 0; i < n->edgeList.size(); i++) {
+        Node *h = n->edgeList.at(i)->endpoint[0];
+        if(h->data != n->data){
+            int j = 0;
+            for(auto kant : h->edgeList){
+                auto slett = kant->endpoint[0]->data;
+                auto data = kant->endpoint[1]->data;
+                if(data == n->data){
+                    std::cout << "slettet peker fra " << slett  << " til " << data << std::endl;
+                    h->edgeList.erase(h->edgeList.begin()+j);
+                }
+                j++;
+            }
+        }
+    }
+    //TODO OPPDATER VERTEX LISTEN!
 
 }
 
