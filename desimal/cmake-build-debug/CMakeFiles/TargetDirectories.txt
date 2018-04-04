@@ -1,0 +1,3 @@
+C:/Users/peder/Documents/Development/c++/dat105/desimal/cmake-build-debug/CMakeFiles/desimal.dir
+C:/Users/peder/Documents/Development/c++/dat105/desimal/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/peder/Documents/Development/c++/dat105/desimal/cmake-build-debug/CMakeFiles/rebuild_cache.dir

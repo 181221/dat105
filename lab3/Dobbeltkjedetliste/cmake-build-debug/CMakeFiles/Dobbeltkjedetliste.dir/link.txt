@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Dobbeltkjedetliste.dir/main.cpp.o  -o Dobbeltkjedetliste 

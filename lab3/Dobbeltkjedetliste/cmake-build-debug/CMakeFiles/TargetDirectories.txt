@@ -1,0 +1,3 @@
+/home/pederyo/Development/c++/dat105/lab3/Dobbeltkjedetliste/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pederyo/Development/c++/dat105/lab3/Dobbeltkjedetliste/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pederyo/Development/c++/dat105/lab3/Dobbeltkjedetliste/cmake-build-debug/CMakeFiles/Dobbeltkjedetliste.dir

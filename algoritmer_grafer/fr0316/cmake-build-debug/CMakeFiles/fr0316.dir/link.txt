@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/fr0316.dir/main.cpp.o  -o fr0316 

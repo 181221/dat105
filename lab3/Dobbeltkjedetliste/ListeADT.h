@@ -64,14 +64,14 @@ public:
     */
     virtual int size() = 0;
 
-    virtual void leggTil(Node<T> *node) = 0;
+    virtual void leggTil(T element) = 0;
 
     virtual void skrivUt() = 0;
 
-    template<class T>
+
     virtual int compare(T &a, T &b) = 0;
 
-    template<class T>
+
     virtual void sortIterator() = 0;
 
     // TODO Sort og iterator

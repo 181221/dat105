@@ -71,7 +71,7 @@ public:
      * @param element
      * @return
      */
-    void leggTil(Node<T> *element) override {
+    void leggTil(T element) override {
         if(first == nullptr){
             first = element;
         }
@@ -89,16 +89,18 @@ public:
         while (el->getNext()->getElement() != nullptr){
             std::cout << el->getElement()<< endl;
         }
-    };
-    template<class T>
+    }
+
+
     int compare(T &a, T &b) override {
         if (a < b) return -1;
         if (b < a) return 1;
         return 0;
     }
-    template<class T>
+
+
     void sortIterator() override {
-        sort(first, last, compare<T>);
+        sort(first, last, compare());
     }
 
 
