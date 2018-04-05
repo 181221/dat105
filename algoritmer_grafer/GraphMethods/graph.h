@@ -43,6 +43,8 @@ private:
     void setAllUnvisited();
     std::vector<Node*> verticeList;
     std::vector<Edge*> edgeList;
+
+    void slettFraGraph(Node *n);
 };
 
 
@@ -61,37 +63,75 @@ void Graph::insertVertex(Node* n)
 
 void Graph::insertEdge(Node *v, Node *w, int i)
 {
-    std::cout << "V: " << v->data << " W " << w->data << std::endl;
     Edge* e = new Edge(v, w, i);
     edgeList.push_back(e);
     v->edgeList.push_back(e);
     w->edgeList.push_back(e);
 }
 
+/**
+ * Går gjennom verticeList, finner noden - sletter kanten og noden.
+ * @param n
+ */
 void Graph::removeVertex(Node *n)
 {
-    for(int i = 0; i < n->edgeList.size(); i++) {
-        Node *h = n->edgeList.at(i)->endpoint[0];
-        if(h->data != n->data){
-            int j = 0;
-            for(auto kant : h->edgeList){
-                auto slett = kant->endpoint[0]->data;
-                auto data = kant->endpoint[1]->data;
-                if(data == n->data){
-                    std::cout << "slettet peker fra " << slett  << " til " << data << std::endl;
-                    h->edgeList.erase(h->edgeList.begin()+j);
-                }
-                j++;
+    bool funnet = false;
+
+    for(int i = 0; i < vertices().size() && !funnet; i++) {
+
+        Node *soek = verticeList.at(i);
+
+        if (soek == n) {
+
+            funnet = true;
+
+            // finner noder som peker på n og sletter kant.
+            for (Edge *edge : soek->edgeList) {
+                removeEdge(edge);
             }
+
+            verticeList.erase(verticeList.begin() + i); // slett Node fra verticeList
         }
     }
-    //TODO OPPDATER VERTEX LISTEN!
 
 }
-
+/**
+ * Går gjennom edgelisten, finner edge og sletter den.
+ * Finn node i kanten, hent edgelisten og slett kanten.
+ * @param e
+ */
 void Graph::removeEdge(Edge *e)
 {
-    //TODO
+    bool funnet = false;
+
+    for(int i = 0; i < edgeList.size() && !funnet; i++) {
+
+        Edge *edge = edgeList.at(i);
+
+        if(edge == e) {
+
+            funnet = true;
+
+            // Noder til kanten
+            Node *k1 = edge->endpoint[0];
+            Node *k2 = edge->endpoint[1];
+
+            // fjern kant fra noden edgeList
+            for(int j = 0; j <  k1->edgeList.size(); j++) {
+                if(k1->edgeList.at(i)->endpoint[0] == k1 || k1->edgeList.at(i)->endpoint[1] == k1){
+                    k1->edgeList.erase(k1->edgeList.begin() +j);
+                }
+            }
+            // fjern kant fra noden edgeList
+            for(int j = 0; j <  k1->edgeList.size(); j++) {
+                if(k1->edgeList.at(i)->endpoint[0] == k2 || k1->edgeList.at(i)->endpoint[1] == k2){
+                    k1->edgeList.erase(k1->edgeList.begin() +j);
+                }
+            }
+            // fjern kant fra EdgeList
+            edgeList.erase(edgeList.begin()+i);
+        }
+    }
 }
 
 std::vector<Edge*>& Graph::incidentEdges(Node *n)

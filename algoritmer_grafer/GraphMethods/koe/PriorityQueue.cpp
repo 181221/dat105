@@ -1,9 +1,8 @@
 //
-// Created by pederyo on 03.04.18.
+// Created by pederyo on 05.04.18.
 //
 
 #include "PriorityQueue.h"
-
 PriorityQueue::PriorityQueue() {
     first = nullptr;
     last = nullptr;
@@ -57,13 +56,6 @@ bool PriorityQueue::isEmpty() {
 void PriorityQueue::operator+=(Edge *edge) {
     add(edge);
 }
-
-
-
-
-
-
-
 
 
 

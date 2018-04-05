@@ -3,4 +3,4 @@ project(fr0316)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(fr0316 main.cpp edge.h graph.h graphadt.h node.h)
+add_executable( fr0316 main.cpp edge.h graph.h graphadt.h node.h koe/enode.cpp koe/enode.h koe/PriorityQueue.cpp koe/PriorityQueue.h)
