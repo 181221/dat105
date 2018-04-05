@@ -1,5 +1,6 @@
 #include <iostream>
-#include "graph.h"
+#include "graf/graph.h"
+#include "koe/PriorityQueue.h"
 
 using namespace std;
 
@@ -15,15 +16,15 @@ void printVector(vector<T> v){
     }
 }
 
+
 int main()
 {
-
+    
     Graph graf;
     Node* e = new Node('e');
     Node* f = new Node('f');
     Node* g = new Node('g');
     Node* h = new Node('h');
-
 
 
     graf.insertVertex(e);

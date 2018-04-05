@@ -4,10 +4,8 @@
 
 #ifndef FR0316_PRIORITYQUEUE_H
 #define FR0316_PRIORITYQUEUE_H
-
-
-#include "../edge.h"
-#include "enode.h"
+class Edge;
+class Enode;
 
 class PriorityQueue {
 public:
@@ -41,7 +39,6 @@ private:
     int size;
 
 };
-
 
 
 #endif //FR0316_PRIORITYQUEUE_H

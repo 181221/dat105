@@ -2,7 +2,12 @@
 // Created by pederyo on 05.04.18.
 //
 
+#include <iostream>
 #include "PriorityQueue.h"
+
+#include "Enode.h"
+#include "../graf/edge.h"
+
 PriorityQueue::PriorityQueue() {
     first = nullptr;
     last = nullptr;
@@ -12,10 +17,12 @@ PriorityQueue::PriorityQueue() {
 PriorityQueue::~PriorityQueue() = default;
 
 void PriorityQueue::add(Edge *el) {
+    Enode *e;
 
     Enode *nynode = new Enode(el);
 
     Enode *denne = first, *forrige = nullptr;
+
 
     while (denne != nullptr && el->weight > denne->getEdge()->weight) {
         forrige = denne;
@@ -41,7 +48,6 @@ void PriorityQueue::add(Edge *el) {
 
     size++;
 }
-
 Edge *PriorityQueue::remove() {
     Edge *tmp = first->getEdge();
     first = first->getNext();
@@ -49,13 +55,11 @@ Edge *PriorityQueue::remove() {
     return tmp;
 }
 
+
 bool PriorityQueue::isEmpty() {
     return size == 0;
 }
 
-void PriorityQueue::operator+=(Edge *edge) {
-    add(edge);
-}
 
 
 
@@ -80,4 +84,8 @@ Enode *PriorityQueue::getLast() const {
 
 void PriorityQueue::setLast(Enode *last) {
     PriorityQueue::last = last;
+}
+
+void PriorityQueue::operator+=(Edge *edge) {
+    add(edge);
 }
