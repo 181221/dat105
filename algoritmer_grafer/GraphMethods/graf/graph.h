@@ -44,8 +44,6 @@ private:
     void setAllUnvisited();
     std::vector<Node*> verticeList;
     std::vector<Edge*> edgeList;
-
-    void slettFraGraph(Node *n);
 };
 
 
@@ -118,7 +116,7 @@ void Graph::removeEdge(Edge *e)
 
             // fjern kant fra noden edgeList
             for(int j = 0; j <  k1->edgeList.size(); j++) {
-                if(k1->edgeList.at(i)->endpoint[0] == k1 || k1->edgeList.at(i)->endpoint[1] == k1){
+                if(k1->edgeList.at(i)->endpoint[1] == k1){
                     k1->edgeList.erase(k1->edgeList.begin() +j);
                 }
             }
@@ -238,20 +236,24 @@ void Graph::depthFirstTraversal(Node* n){
  * @param n
  */
 void Graph::breadthFirstTraversal(Node* n){
+    setAllUnvisited();
     std::queue<Node*> *q = new std::queue<Node*>;
     q->push(n);
     Node *v;
     while (!q->empty()){
         v = q->front();
         if(!v->visited){
-            for(int i = 0; i < v->edgeList.size(); i ++){
-                if(v->edgeList.at(i));
+            for(std::vector<Edge*>::iterator i = v->edgeList.begin(); i != v->edgeList.end(); i++){
+                Node *nabo = opposite(v,*i);
+                if(!nabo->visited){
+                    q->push(nabo);
+                }
             }
+            std::cout << v->data << " ";
+            v->visited = true;
         }
+        q->pop();
     }
-
-
-    //TODO
 }
 
 void Graph::setAllUnvisited()
