@@ -15,14 +15,18 @@ void printVector(vector<T> v){
         cout << *i << endl;
     }
 }
-void makePriorQue()
-{
-
+int printSum(vector<Edge*> v) {
+    int sum = 0;
+    for(Edge *edge : v){
+        sum += edge->weight;
+    }
+    return sum;
 }
 
 
 int main()
 {
+
 
     Graph graf;
     Node* e = new Node('e');
@@ -44,41 +48,47 @@ int main()
     graf.insertEdge(g,h,2);
     graf.insertEdge(i,g,3);
 
+
+
     cout << "-------------------GRAF--------------------" << endl;
     printVector(graf.edges());
+
     cout << "-------------------BREADTH FIRST TRAVERSAL--------------------" << endl;
     graf.breadthFirstTraversal(f);
+    cout << endl;
+
+    cout << "-------------------DEPTH FIRST TRAVERSAL--------------------" << endl;
+    graf.depthFirstTraversal(f);
+
+    cout << "-------------------PRIMS ALGORITHM--------------------" << endl;
+    vector<Edge*> v = graf.primsAlgorithm();
+    printVector(v);
+    cout << "MST weight " << printSum(v) << endl;
+
+    cout << "-------------------DIJKSTRAS ALGORITHM--------------------" << endl;
+    graf.dijkstrasAlgorithm(h);
 
     cout << ""  << endl;
-    cout << "Antall Noder: "<<graf.vertices().size() << endl;
+
     cout << "Fjerner " << f->data << endl;
     graf.removeVertex(f);
-    cout << "Antall Noder: " << graf.vertices().size() << endl;
-
-    cout << endl;
 
     cout << "-------------------GRAF--------------------" << endl;
     printVector(graf.edges());
     cout << endl;
+
+
     cout << "Fjerner " << h->data << endl;
-
     graf.removeVertex(h);
+
     cout << "-------------------GRAF--------------------" << endl;
     printVector(graf.edges());
-
-
 
 
     return 0;
 
 
 
-
-//graf.depthFirstTraversal(f);
-//
-//vector<Edge*> v = graf.primsAlgorithm();
-//printVector(v);
-//graf.dijkstrasAlgorithm(e);
 }
 
 
