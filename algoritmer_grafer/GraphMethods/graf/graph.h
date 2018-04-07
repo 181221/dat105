@@ -2,6 +2,7 @@
 #define FR0316_GRAPH_H
 
 #include "graphadt.h"
+#include "../koe/PriorityQueue.h"
 #include <stack>
 #include <queue>
 #include <algorithm>
@@ -114,7 +115,6 @@ void Graph::removeEdge(Edge *e)
 
             // Noder til kanten
             Node *k1 = edge->endpoint[0];
-            Node *k2 = edge->endpoint[1];
 
             // fjern kant fra noden edgeList
             for(int j = 0; j <  k1->edgeList.size(); j++) {
@@ -122,12 +122,7 @@ void Graph::removeEdge(Edge *e)
                     k1->edgeList.erase(k1->edgeList.begin() +j);
                 }
             }
-            // fjern kant fra noden edgeList
-            for(int j = 0; j <  k1->edgeList.size(); j++) {
-                if(k1->edgeList.at(i)->endpoint[0] == k2 || k1->edgeList.at(i)->endpoint[1] == k2){
-                    k1->edgeList.erase(k1->edgeList.begin() +j);
-                }
-            }
+
             // fjern kant fra EdgeList
             edgeList.erase(edgeList.begin()+i);
         }
@@ -229,8 +224,33 @@ void Graph::depthFirstTraversal(Node* n){
     std::cout << std::endl;
     setAllUnvisited();
 }
-
+/**
+ * breidde-fyrst(t)
+    1) lagKø(q)
+    2) q.leggTil(t)
+    3) så lenge q ikkje-tom
+    4) v = q.taUt()
+    5) viss v ikkje er besøkt
+    6) legg alle v sine umerka naboar til q
+    7) merk v som besøkt
+    8) behandle v
+    9) gjenta
+ * @param n
+ */
 void Graph::breadthFirstTraversal(Node* n){
+    std::queue<Node*> *q = new std::queue<Node*>;
+    q->push(n);
+    Node *v;
+    while (!q->empty()){
+        v = q->front();
+        if(!v->visited){
+            for(int i = 0; i < v->edgeList.size(); i ++){
+                if(v->edgeList.at(i));
+            }
+        }
+    }
+
+
     //TODO
 }
 

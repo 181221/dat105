@@ -15,11 +15,15 @@ void printVector(vector<T> v){
         cout << *i << endl;
     }
 }
+void makePriorQue()
+{
+
+}
 
 
 int main()
 {
-    
+
     Graph graf;
     Node* e = new Node('e');
     Node* f = new Node('f');
