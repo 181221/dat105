@@ -286,7 +286,13 @@ Node* Graph::selectRandom() {
 
 }
 class GraphUtil {
+public:
     bool EriMST() {
+    }
+    bool static finnes(std::set<Node*> visited, Edge *e) {
+        bool found = (std::find(visited.begin(), visited.end(), e->endpoint[0]) != visited.end());
+        bool found1 = (std::find(visited.begin(), visited.end(), e->endpoint[1]) != visited.end());
+        return !(found && found1);
     }
 };
 /**
@@ -311,10 +317,7 @@ std::vector<Edge*> Graph::primsAlgorithm()
     while (!pq->isEmpty()) {
         e = pq->remove();
 
-        bool found = (std::find(visited.begin(), visited.end(), e->endpoint[0]) != visited.end());
-        bool found1 = (std::find(visited.begin(), visited.end(), e->endpoint[1]) != visited.end());
-
-        if(!(found && found1)){
+        if(GraphUtil::finnes(visited, e)){
             if(!(std::find(mst.begin(), mst.end(), e) != mst.end())){
                 mst.push_back(e);
             }
