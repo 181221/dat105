@@ -279,25 +279,6 @@ public:
         return e->weight > f->weight;
     }
 };
-/**
- * prim()
-1) s = vilkårleg startnode
-2) lagMinHaug(h)
-3) legg alle kantar som går ut frå s inn i h
-4) så lenge h ikkje tom
-5) e = h.fjernMin()
-6) viss ikkje begge endepunkta til e er med i MST
-7) - la w vere endepunktet til e som ikkje er med i MST
-8) - legg e til MST
-9) - legg alle kantar mellom w og nodar som ikkje er med i MST til h
-10) gjenta
-
- * @return
- */
-/**
- * Bruker prioritets kø istedenfor heap.
- * @return
- */
 
 Node* Graph::selectRandom() {
     srand(time(NULL));
@@ -306,61 +287,49 @@ Node* Graph::selectRandom() {
 }
 class GraphUtil {
     bool EriMST() {
-        //
-        //    visited.insert(w);bool found = (std::find(visited.begin(), visited.end(), e->endpoint[0]) != visited.end());
-        //bool found1 = (std::find(visited.begin(), visited.end(), e->endpoint[1]) != visited.end());
-      /*  if(!(found && found1)){
-            Node* w = e->endpoint[0];
-            if(!(std::find(mst.begin(), mst.end(), e) != mst.end())){
-                mst.push_back(e);
-            }
-            for(Edge *k : w->edgeList){
-                if(!(k->endpoint[0]->data == e->endpoint[0]->data && k->endpoint[1]->data == e->endpoint[1]->data))
-                    if(!(std::find(mst.begin(), mst.end(), k) != mst.end())){
-                        pq->operator+=(k);
-                    }
-            }
-
-        }*/
     }
 };
+/**
+ * Bruker prioritetskø og ikke heap
+ * @return
+ */
 std::vector<Edge*> Graph::primsAlgorithm()
 {
-   /* Node *f;
-    for(Node *s : verticeList) {
-        if(s->data == 'f'){
-            f = s;
-        }
-    }*/
     Node *f = selectRandom();
+
     PriorityQueue *pq = new PriorityQueue();
+
     std::vector<Edge*> mst;
+
     std::set<Node*> visited;
+
     for(Edge *k : f->edgeList) {
         pq->operator+=(k);
     }
+
     Edge *e;
     while (!pq->isEmpty()) {
         e = pq->remove();
+
         bool found = (std::find(visited.begin(), visited.end(), e->endpoint[0]) != visited.end());
         bool found1 = (std::find(visited.begin(), visited.end(), e->endpoint[1]) != visited.end());
-          if(!(found && found1)){
 
-              if(!(std::find(mst.begin(), mst.end(), e) != mst.end())){
-                  mst.push_back(e);
-              }
-              for(Edge *k : e->endpoint[0]->edgeList){
-                  pq->operator+=(k);
-              }
-              for(Edge *k : e->endpoint[1]->edgeList){
-                  pq->operator+=(k);
-              }
-              visited.insert(e->endpoint[0]);
-              visited.insert(e->endpoint[1]);
+        if(!(found && found1)){
+            if(!(std::find(mst.begin(), mst.end(), e) != mst.end())){
+                mst.push_back(e);
+            }
+            for(Edge *k : e->endpoint[0]->edgeList){
+                pq->operator+=(k);
+            }
+            for(Edge *k : e->endpoint[1]->edgeList){
+                pq->operator+=(k);
+            }
+            visited.insert(e->endpoint[0]);
+            visited.insert(e->endpoint[1]);
 
-          }
-      }
-      return mst;
+        }
+    }
+    return mst;
   }
 
   /*
