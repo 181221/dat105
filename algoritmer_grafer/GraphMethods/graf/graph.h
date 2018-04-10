@@ -247,9 +247,9 @@ void Graph::breadthFirstTraversal(Node* n){
         if(!v->visited){
             for(std::vector<Edge*>::iterator i = v->edgeList.begin(); i != v->edgeList.end(); i++){
                 Node *nabo = opposite(v,*i);
-                if(!nabo->visited){
+                if(!nabo->visited)
                     q->push(nabo);
-                }
+
             }
             std::cout << v->data << " ";
             v->visited = true;
@@ -287,11 +287,9 @@ Node* Graph::selectRandom() {
 }
 class GraphUtil {
 public:
-    bool EriMST() {
-    }
-    bool static finnes(std::set<Node*> visited, Edge *e) {
-        bool found = (std::find(visited.begin(), visited.end(), e->endpoint[0]) != visited.end());
-        bool found1 = (std::find(visited.begin(), visited.end(), e->endpoint[1]) != visited.end());
+    bool static exists(std::set<Node *> visited, Edge *e) {
+        bool found = (visited.find(e->endpoint[0]) != visited.end());
+        bool found1 = (visited.find(e->endpoint[1]) != visited.end());
         return !(found && found1);
     }
 };
@@ -309,24 +307,24 @@ std::vector<Edge*> Graph::primsAlgorithm()
 
     std::set<Node*> visited;
 
-    for(Edge *k : f->edgeList) {
-        pq->operator+=(k);
-    }
+    for (Edge *k : f->edgeList)
+        *pq += k;
+
 
     Edge *e;
     while (!pq->isEmpty()) {
         e = pq->remove();
 
-        if(GraphUtil::finnes(visited, e)){
-            if(!(std::find(mst.begin(), mst.end(), e) != mst.end())){
+        if(GraphUtil::exists(visited, e)){
+            if(!(std::find(mst.begin(), mst.end(), e) != mst.end()))
                 mst.push_back(e);
-            }
-            for(Edge *k : e->endpoint[0]->edgeList){
-                pq->operator+=(k);
-            }
-            for(Edge *k : e->endpoint[1]->edgeList){
-                pq->operator+=(k);
-            }
+
+            for(Edge *k : e->endpoint[0]->edgeList)
+                *pq += k;
+
+            for(Edge *k : e->endpoint[1]->edgeList)
+                *pq += k;
+
             visited.insert(e->endpoint[0]);
             visited.insert(e->endpoint[1]);
 
