@@ -1,0 +1,3 @@
+/home/pederyo/Development/c++/dat105/EksamensOving/prioritetskoe/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pederyo/Development/c++/dat105/EksamensOving/prioritetskoe/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pederyo/Development/c++/dat105/EksamensOving/prioritetskoe/cmake-build-debug/CMakeFiles/prioritetskoe.dir

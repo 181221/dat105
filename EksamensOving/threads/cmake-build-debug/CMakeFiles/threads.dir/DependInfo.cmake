@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "/home/pederyo/Development/c++/dat105/EksamensOving/threads/Delt.cpp" "/home/pederyo/Development/c++/dat105/EksamensOving/threads/cmake-build-debug/CMakeFiles/threads.dir/Delt.cpp.o"
   "/home/pederyo/Development/c++/dat105/EksamensOving/threads/main.cpp" "/home/pederyo/Development/c++/dat105/EksamensOving/threads/cmake-build-debug/CMakeFiles/threads.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")

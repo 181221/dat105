@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/arv.dir/main.cpp.o  -o arv 

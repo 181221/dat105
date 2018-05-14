@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/pederyo/Development/c++/dat105/EksamensOving/arv/Figur.h
+string
+/home/pederyo/Development/c++/dat105/EksamensOving/arv/string
+
+/home/pederyo/Development/c++/dat105/EksamensOving/arv/Firkant.h
+Figur.h
+/home/pederyo/Development/c++/dat105/EksamensOving/arv/Figur.h
+
+/home/pederyo/Development/c++/dat105/EksamensOving/arv/Person.h
+string
+-
+
+/home/pederyo/Development/c++/dat105/EksamensOving/arv/main.cpp
+iostream
+-
+Figur.h
+/home/pederyo/Development/c++/dat105/EksamensOving/arv/Figur.h
+Firkant.h
+/home/pederyo/Development/c++/dat105/EksamensOving/arv/Firkant.h
+Person.h
+/home/pederyo/Development/c++/dat105/EksamensOving/arv/Person.h
+

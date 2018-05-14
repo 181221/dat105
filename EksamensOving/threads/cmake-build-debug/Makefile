@@ -123,6 +123,33 @@ threads/fast:
 	$(MAKE) -f CMakeFiles/threads.dir/build.make CMakeFiles/threads.dir/build
 .PHONY : threads/fast
 
+Delt.o: Delt.cpp.o
+
+.PHONY : Delt.o
+
+# target to build an object file
+Delt.cpp.o:
+	$(MAKE) -f CMakeFiles/threads.dir/build.make CMakeFiles/threads.dir/Delt.cpp.o
+.PHONY : Delt.cpp.o
+
+Delt.i: Delt.cpp.i
+
+.PHONY : Delt.i
+
+# target to preprocess a source file
+Delt.cpp.i:
+	$(MAKE) -f CMakeFiles/threads.dir/build.make CMakeFiles/threads.dir/Delt.cpp.i
+.PHONY : Delt.cpp.i
+
+Delt.s: Delt.cpp.s
+
+.PHONY : Delt.s
+
+# target to generate assembly for a file
+Delt.cpp.s:
+	$(MAKE) -f CMakeFiles/threads.dir/build.make CMakeFiles/threads.dir/Delt.cpp.s
+.PHONY : Delt.cpp.s
+
 main.o: main.cpp.o
 
 .PHONY : main.o
@@ -159,6 +186,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... threads"
+	@echo "... Delt.o"
+	@echo "... Delt.i"
+	@echo "... Delt.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

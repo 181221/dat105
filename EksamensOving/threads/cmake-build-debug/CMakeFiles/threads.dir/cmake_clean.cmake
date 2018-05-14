@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/threads.dir/main.cpp.o"
+  "CMakeFiles/threads.dir/Delt.cpp.o"
   "threads.pdb"
   "threads"
 )
