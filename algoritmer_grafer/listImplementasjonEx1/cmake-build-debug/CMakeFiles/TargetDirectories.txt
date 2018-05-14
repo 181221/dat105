@@ -1,0 +1,3 @@
+/home/pederyo/Development/c++/dat105/algoritmer_grafer/listImplementasjonEx1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/home/pederyo/Development/c++/dat105/algoritmer_grafer/listImplementasjonEx1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/home/pederyo/Development/c++/dat105/algoritmer_grafer/listImplementasjonEx1/cmake-build-debug/CMakeFiles/listImplementasjonEx1.dir

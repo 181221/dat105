@@ -40,13 +40,13 @@ int main()
     graf.insertVertex(f);
     graf.insertVertex(g);
     graf.insertVertex(h);
-    graf.insertVertex(i);
+    //graf.insertVertex(i);
 
     graf.insertEdge(e,f,1);
     graf.insertEdge(f,g,2);
     graf.insertEdge(e,g,3);
     graf.insertEdge(g,h,2);
-    graf.insertEdge(i,g,3);
+    //graf.insertEdge(i,g,3);
 
 
 
